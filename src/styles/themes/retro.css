@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&family=Yellowtail&family=Press+Start+2P&display=swap");
 
 body[data-theme="retro"] {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.25), transparent), url(../../together.png);
-  background-size: cover;
   --hover-box-shadow:
     -2px -2px 5px var(--bi-blue),
     0px 3px 5px var(--bi-purple),
@@ -18,14 +16,9 @@ body[data-theme="retro"] {
     position: relative;
     overflow: hidden;
     z-index: 2;
-    background-image:
-      url(../../assets/5.png),
-      url(../../assets/4.png),
-      url(../../assets/3.png),
-      url(../../assets/2.png),
-      url(../../assets/6.png),
-      url(../../assets/1.png);
     background-size: contain;
+    border: 16px double var(--bi-pink);
+    margin: 2em 1em;
   }
 
   .hero::before {
@@ -37,6 +30,7 @@ body[data-theme="retro"] {
     content: "";
     background-image: linear-gradient(to top, var(--bi-blue) 25%, var(--bi-purple) 75%, var(--bi-pink));
     opacity: 0.5;
+    z-index: 2;
   }
 
   .sun,
@@ -47,28 +41,91 @@ body[data-theme="retro"] {
   main {
     position: relative;
     overflow: hidden;
-    z-index: 0;
+    z-index: -10;
     display: flex;
     flex-flow: column nowrap;
+    /* background-color: rgba(37, 3, 50, 0.13); */
   }
 
-  main::after {
-    position: absolute;
-    left: -30%;
-    right: -30%;
+  .grid {
+    /* background-color: orange; */
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* right: -30%; */
+    /* height: 80%; */
     top: 0;
-    bottom: 0;
-    content: "";
+    /* bottom: 0; */
+    /* content: ""; */
     background-image: linear-gradient(to bottom, white, lavender, pink, cyan, white);
     mask: linear-gradient(black 1.5px, transparent 1.5px, transparent calc(100% - 1.5px), #1c7cbb calc(100% - 1.5px)), linear-gradient(90deg, #1c7cbb 1.5px, transparent 1.5px, transparent calc(100% - 1.5px), #1c7cbb calc(100% - 1.5px));
     mask-size: 10% 10%;
-    transform: perspective(500px) rotateX(65deg);
+    /* transform: perspective(250px) rotateX(45deg); */
     mask-repeat: repeat;
     background-repeat: repeat;
     background-size: 100% 20%;
     background-position-y: 10%;
-    z-index: -1;
+    z-index: -100;
   }
+  main::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.66),rgba(0,0,0,0.25), rgba(0,0,0,0.6)),linear-gradient(to top, var(--bi-blue) 25%, var(--bi-purple) 75%, var(--bi-pink));
+    opacity: 0.25;
+    z-index: -100;
+  }
+
+  .cloud-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background-color: yellow; */
+    background-image: url(../../assets/1.png);
+    background-size: contain;
+    overflow: hidden;
+  }
+
+  .cloud {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    animation: scroll linear infinite;
+    background-size: 50% 100%;
+    transform: translateX(-50%) scaleX(2);
+    &:nth-of-type(1) {
+      background-image: url(../../assets/6.png);
+      animation-duration: 48s;
+    }
+    &:nth-of-type(2) {
+      background-image: url(../../assets/2.png);
+      animation-duration: 96s;
+    }
+    &:nth-of-type(3) {
+      background-image: url(../../assets/4.png);
+      animation-duration: 72s;
+    }
+    &:nth-of-type(4) {
+      background-image: url(../../assets/5.png);
+      animation-duration: 96s;
+    }
+    &:nth-of-type(5) {
+      background-image: url(../../assets/3.png);
+      animation-duration: 120s;
+    }
+    
+  }
+
 
   .sun {
     background-image: linear-gradient(to bottom, var(--bi-blue), var(--bi-purple), var(--bi-pink));
@@ -135,11 +192,16 @@ body[data-theme="retro"] {
     margin: 0 auto;
     padding: 0.25em 0.5em;
   }
-
+  
   .content {
-    height: 100%;
+    box-shadow: var(--hover-box-shadow);
+    /* background-color: rgba(37, 3, 50, 0.73); */
+    border: 3px double yellow;
+    /* height: 100%; */
     padding: 3em min(5em, 25%);
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 1));
+    margin: 3em min(5em, 25%);
+
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.11), rgba(0, 0, 0, 0.4)), linear-gradient(to bottom, var(--bi-blue) 25%, var(--bi-purple) 75%, var(--bi-pink));
     z-index: 4;
     font-family: "Press Start 2P";
   }
@@ -160,9 +222,13 @@ body[data-theme="retro"] {
     line-height: 1.5em;
     color: gold;
   }
+  nav {
+    position: relative;
+  background-color: rgba(37, 3, 50, 0.73);
+  }
 
   nav>.links {
-    margin: 0.66em 0.33em;
+    padding: 0.66em 0.33em;
     min-height: 10vmin;
     list-style-type: none;
     display: flex;
@@ -178,7 +244,7 @@ body[data-theme="retro"] {
   }
 
   nav {
-    border-bottom: 0.25em solid var(--bi-blue);
+    border-bottom: 0.25em solid yellow;
   }
 
   .link:hover,
@@ -213,7 +279,8 @@ body[data-theme="retro"] {
     font-size: 1.33em;
     text-align: center;
     align-self: flex-start;
-    color: var(--bi-purple);
+    /* color: var(--bi-purple); */
+    text-decoration: underline solid var(--bi-purple);
   }
 
   .stroke-1 {
@@ -233,6 +300,11 @@ body[data-theme="retro"] {
   }
 }
 
+@keyframes scroll {
+  to {
+    background-position-x: 100%;
+  }
+}
 @keyframes mymove {
   from {
     background-position: 0% 0%;

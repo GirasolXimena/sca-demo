@@ -10,6 +10,10 @@
 </head>
 
 <body data-theme="retro">
+  <div>
+    <div class="grid"></div>
+
+  </div>
   <aside>
     <nav>
       <ul class="links">
@@ -28,6 +32,14 @@
   </aside>
   <main>
     <div class="hero">
+      <div class="cloud-container">
+        <div class="cloud"></div>
+        <div class="cloud"></div>
+        <div class="cloud"></div>
+        <div class="cloud"></div>
+        <div class="cloud"></div>
+        
+      </div>
       <div class="sun"><span class="road"></span></div>
       <svg preserveAspectRatio="none" viewBox="0 0 10 1">
         <path class="stroke-1" d="M 0 0.125 C 2.5 2     7.5 -1       10 0.5 L 10 0.9 L 0 0.9 L 0 0.5" />
@@ -45,22 +57,22 @@
       <p>Members of the queer community are charged a discounted hourly rate for one-session pieces, or a discounted
         flat
         session fee for multi-session projects.</p>
-      <p>Additionally, you can enter code "queerdiscount" for 10% off any item in my online shop and etsy store</p>
-    </div>
-  </main>
-  <fieldset id="theme-toggle" data-theme="minimal">
-    <legend>Select active theme</legend>
-    <div>
-      <input type="radio" name="theme" id="retro" value="retro" checked />
-      <label for="retro">Retro</label>
-    </div>
-    <div>
-      <input type="radio" name="theme" id="minimal" value="minimal" />
-      <label for="minimal">Minimal</label>
-    </div>
-  </fieldset>
-</body>
-<script>
+        <p>Additionally, you can enter code "queerdiscount" for 10% off any item in my online shop and etsy store</p>
+      </div>
+    </main>
+    <fieldset id="theme-toggle" data-theme="minimal">
+      <legend>Select active theme</legend>
+      <div>
+        <input type="radio" name="theme" id="retro" value="retro" checked />
+        <label for="retro">Retro</label>
+      </div>
+      <div>
+        <input type="radio" name="theme" id="minimal" value="minimal" />
+        <label for="minimal">Minimal</label>
+      </div>
+    </fieldset>
+  </body>
+  <script>
   window.addEventListener("load", () => {
     const themeToggle = document.getElementById('theme-toggle')
     const setTheme = (e) => document.body.setAttribute('data-theme', e.target.value)
