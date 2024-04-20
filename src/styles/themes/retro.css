@@ -15,7 +15,6 @@ body[data-theme="retro"] {
     text-transform: uppercase;
     position: relative;
     overflow: hidden;
-    z-index: 2;
     background-size: contain;
     border: 16px double var(--bi-pink);
     margin: 2em 1em;
@@ -30,7 +29,7 @@ body[data-theme="retro"] {
     content: "";
     background-image: linear-gradient(to top, var(--bi-blue) 25%, var(--bi-purple) 75%, var(--bi-pink));
     opacity: 0.5;
-    z-index: 2;
+    z-index: 1;
   }
 
   .sun,
@@ -44,30 +43,24 @@ body[data-theme="retro"] {
     z-index: -10;
     display: flex;
     flex-flow: column nowrap;
-    /* background-color: rgba(37, 3, 50, 0.13); */
   }
 
   .grid {
-    /* background-color: orange; */
     position: fixed;
     left: 0;
     width: 100%;
     height: 100%;
-    /* right: -30%; */
-    /* height: 80%; */
     top: 0;
-    /* bottom: 0; */
-    /* content: ""; */
     background-image: linear-gradient(to bottom, white, lavender, pink, cyan, white);
     mask: linear-gradient(black 1.5px, transparent 1.5px, transparent calc(100% - 1.5px), #1c7cbb calc(100% - 1.5px)), linear-gradient(90deg, #1c7cbb 1.5px, transparent 1.5px, transparent calc(100% - 1.5px), #1c7cbb calc(100% - 1.5px));
     mask-size: 10% 10%;
-    /* transform: perspective(250px) rotateX(45deg); */
     mask-repeat: repeat;
     background-repeat: repeat;
     background-size: 100% 20%;
     background-position-y: 10%;
     z-index: -100;
   }
+
   main::before {
     content: "";
     position: fixed;
@@ -75,8 +68,8 @@ body[data-theme="retro"] {
     left: 0;
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.66),rgba(0,0,0,0.25), rgba(0,0,0,0.6)),linear-gradient(to top, var(--bi-blue) 25%, var(--bi-purple) 75%, var(--bi-pink));
-    opacity: 0.25;
+    background-color: rgb(100, 54, 146);
+    opacity: 0.5;
     z-index: -100;
   }
 
@@ -86,7 +79,6 @@ body[data-theme="retro"] {
     left: 0;
     right: 0;
     bottom: 0;
-    /* background-color: yellow; */
     background-image: url(../../assets/1.png);
     background-size: contain;
     overflow: hidden;
@@ -103,27 +95,32 @@ body[data-theme="retro"] {
     animation: scroll linear infinite;
     background-size: 50% 100%;
     transform: translateX(-50%) scaleX(2);
+
     &:nth-of-type(1) {
       background-image: url(../../assets/6.png);
       animation-duration: 48s;
     }
+
     &:nth-of-type(2) {
       background-image: url(../../assets/2.png);
       animation-duration: 96s;
     }
+
     &:nth-of-type(3) {
       background-image: url(../../assets/4.png);
       animation-duration: 72s;
     }
+
     &:nth-of-type(4) {
       background-image: url(../../assets/5.png);
       animation-duration: 96s;
     }
+
     &:nth-of-type(5) {
       background-image: url(../../assets/3.png);
       animation-duration: 120s;
     }
-    
+
   }
 
 
@@ -187,17 +184,14 @@ body[data-theme="retro"] {
     background-repeat: repeat-y, repeat;
     background-clip: text, border-box;
     color: transparent;
-    box-shadow: var(--hover-box-shadow);
     width: fit-content;
     margin: 0 auto;
     padding: 0.25em 0.5em;
   }
-  
+
   .content {
     box-shadow: var(--hover-box-shadow);
-    /* background-color: rgba(37, 3, 50, 0.73); */
     border: 3px double yellow;
-    /* height: 100%; */
     padding: 3em min(5em, 25%);
     margin: 3em min(5em, 25%);
 
@@ -222,9 +216,10 @@ body[data-theme="retro"] {
     line-height: 1.5em;
     color: gold;
   }
+
   nav {
     position: relative;
-  background-color: rgba(37, 3, 50, 0.73);
+    background-color: rgb(100, 54, 146);
   }
 
   nav>.links {
@@ -279,7 +274,6 @@ body[data-theme="retro"] {
     font-size: 1.33em;
     text-align: center;
     align-self: flex-start;
-    /* color: var(--bi-purple); */
     text-decoration: underline solid var(--bi-purple);
   }
 
@@ -305,6 +299,7 @@ body[data-theme="retro"] {
     background-position-x: 100%;
   }
 }
+
 @keyframes mymove {
   from {
     background-position: 0% 0%;
