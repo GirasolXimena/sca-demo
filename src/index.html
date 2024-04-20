@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Andy Crawford Art</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/project.css" />
+</head>
+
+<body data-theme="retro">
+  <aside>
+    <nav>
+      <ul class="links">
+        <li class="link home">Andy Crawford Art</li>
+        <span class="wrap">
+          <li class="link">Queer Discount</li>
+          <li class="link">Links</li>
+          <li class="link">events</li>
+          <li class="link">portfolio</li>
+          <li class="link">about</li>
+          <li class="link">store</li>
+        </span>
+        <li class="link cart">cart</li>
+      </ul>
+    </nav>
+  </aside>
+  <main>
+    <div class="hero">
+      <div class="sun"><span class="road"></span></div>
+      <svg preserveAspectRatio="none" viewBox="0 0 10 1">
+        <path class="stroke-1" d="M 0 0.125 C 2.5 2     7.5 -1       10 0.5 L 10 0.9 L 0 0.9 L 0 0.5" />
+        <path class="stroke-2" d="M 0 0.25 C 2.5 1.75  7.5 -0.75    10 0.5 L 10 0.9 L 0 0.9 L 0 0.5" opacity="0.8" />
+        <path class="stroke-3" d="M 0 0.375 C 2.5 1.5   7.5 -0.5     10 0.5 L 10 0.9 L 0 0.9 L 0 0.5" opacity="0.5" />
+        <path class="stroke-4" d="M 0 0.5 C 2.5 1.5   7.5 -0.25   10 0.6 L 10 1.1 L 0 1.1 L 0 0.5" opacity="1" />
+      </svg>
+    </div>
+    <div class="content">
+      <h1>The Queer Discount
+      </h1>
+      <h2>What is the queer discount?</h2>
+      <p>I offer queer clientele discounted prices on both tattoos and merchandise.</p>
+      <h2>How does it work?</h2>
+      <p>Members of the queer community are charged a discounted hourly rate for one-session pieces, or a discounted
+        flat
+        session fee for multi-session projects.</p>
+      <p>Additionally, you can enter code "queerdiscount" for 10% off any item in my online shop and etsy store</p>
+    </div>
+  </main>
+  <fieldset id="theme-toggle" data-theme="minimal">
+    <legend>Select active theme</legend>
+    <div>
+      <input type="radio" name="theme" id="retro" value="retro" checked />
+      <label for="retro">Retro</label>
+    </div>
+    <div>
+      <input type="radio" name="theme" id="minimal" value="minimal" />
+      <label for="minimal">Minimal</label>
+    </div>
+  </fieldset>
+</body>
+<script>
+  window.addEventListener("load", () => {
+    const themeToggle = document.getElementById('theme-toggle')
+    const setTheme = (e) => document.body.setAttribute('data-theme', e.target.value)
+    themeToggle.addEventListener("change", setTheme, false)
+  });
+</script>
+
+</html>

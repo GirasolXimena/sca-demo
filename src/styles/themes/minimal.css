@@ -1,0 +1,168 @@
+body[data-theme="minimal"] {
+  --hover-box-shadow:
+    -2px -2px 5px var(--bi-blue),
+    0px 3px 5px var(--bi-purple),
+    3px 2px 5px var(--bi-purple),
+    0px -5px 5px var(--bi-blue);
+
+  .hero {
+    min-height: 350px;
+    height: 33vmin;
+    display: grid;
+    place-items: end;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(to top, var(--bi-blue) 25%, var(--bi-purple) 75%, var(--bi-pink));
+  }
+
+  .sun, .road {
+    position: absolute;
+  }
+  
+  .sun {
+    background-image: linear-gradient(to bottom, var(--bi-blue), var(--bi-purple), var(--bi-pink));
+    transform: translate(-50%, -50%);
+    width: min(50vw, 320px);
+    height: min(50vw, 320px);
+    filter: blur(1px);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+  }
+
+  .road {
+    background-image: repeating-linear-gradient(transparent,
+        transparent 10px,
+        black 10px,
+        black 20px);
+    z-index: 2;
+    height: 50%;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    width: 100%;
+    animation: mymove 45s linear infinite;
+    background-size: 100% 50%;
+  }
+
+
+  :is(canvas),
+  :is(svg) {
+    display: block;
+  }
+
+  .hero svg {
+    align-self: flex-end;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+  }
+
+
+  :is(h1) {
+    font-size: 3.5em;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+  }
+
+  .content {
+    max-width: 50vw;
+    margin: 0 auto;
+  }
+
+  :is(h2) {
+    margin: 1.5em 0;
+  }
+
+  h2:first-child {
+    margin-top: 0;
+  }
+
+  :is(p) {
+    margin: 1em 0;
+  }
+
+  nav>.links {
+    margin: 0.66em 0.33em;
+    min-height: 10vmin;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1em;
+    font-size: 1.5em;
+    font-weight: 700;
+  }
+
+  .link {
+    padding: 0.125em 0.25em;
+  }
+
+  nav {
+    border-bottom: 0.25em solid var(--bi-blue);
+  }
+
+  h1:hover,
+  h2:hover,
+  .link:hover {
+    color: var(--bi-pink);
+    text-shadow: 2px 0px 2px var(--bi-purple), -2px 0px 2px var(--bi-blue);
+  }
+
+  h1:hover,
+  h2:hover {
+    text-decoration: underline var(--bi-blue);
+  }
+
+  .link:hover {
+    cursor: pointer;
+    box-shadow: var(--hover-box-shadow);
+  }
+
+  .links .wrap {
+    flex: 1 1 0;
+    display: flex;
+    gap: 0.5em 1em;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+
+  .link.home,
+  .link.cart {
+    font-size: 1.33em;
+    text-align: center;
+    align-self: flex-start;
+
+  }
+
+  .stroke-1 {
+    fill: var(--bi-purple);
+  }
+
+  .stroke-2 {
+    fill: var(--bi-pink);
+  }
+
+  .stroke-3 {
+    fill: var(--bi-blue);
+  }
+
+  .stroke-4 {
+    fill: var(--dark);
+  }
+}
+
+@keyframes mymove {
+  from {
+    background-position: 0% 0%;
+  }
+
+  to {
+    background-position: 0% -100%;
+  }
+}
