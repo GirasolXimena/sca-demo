@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&family=Yellowtail&family=Press+Start+2P&display=swap");
 
 body[data-theme="retro"] {
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.25), transparent), url(../../together.png);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.25), transparent), url(../../together.png);
   background-size: cover;
   --hover-box-shadow:
     -2px -2px 5px var(--bi-blue),
@@ -18,23 +18,16 @@ body[data-theme="retro"] {
     position: relative;
     overflow: hidden;
     z-index: 2;
-    
+    background-image:
+      url(../../assets/5.png),
+      url(../../assets/4.png),
+      url(../../assets/3.png),
+      url(../../assets/2.png),
+      url(../../assets/6.png),
+      url(../../assets/1.png);
+    background-size: contain;
   }
 
-  .hero::after {
-    position: absolute;
-    left: -30%;
-    right: -30%;
-    top: 0;
-    bottom: 0;
-    content: "";
-    /* background-image: linear-gradient(to bottom, white, lavender, pink, cyan, white); */
-    /* mask: linear-gradient(black 1.5px, transparent 1.5px, transparent calc(100% - 1.5px), #1c7cbb calc(100% - 1.5px)), linear-gradient(90deg, #1c7cbb 1.5px, transparent 1.5px, transparent calc(100% - 1.5px), #1c7cbb calc(100% - 1.5px)); */
-    /* mask-size: 50px 0px; */
-    /* mask-repeat: repeat; */
-    /* background-repeat: repeat-x; */
-    background-position-x: 40%;
-  }
   .hero::before {
     position: absolute;
     left: -30%;
@@ -127,13 +120,11 @@ body[data-theme="retro"] {
     width: 100%;
     text-align: center;
     z-index: 2;
-    background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,0.66));
-    background: linear-gradient(
-      cornflowerblue 30%,
-      white,
-      darkmagenta 60%,
-      cornflowerblue 100%
-    );
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.66));
+    background: linear-gradient(cornflowerblue 30%,
+        white,
+        darkmagenta 60%,
+        cornflowerblue 100%);
     -webkit-text-stroke: 0.1px dimgray;
     background-size: 100% 1.125em, auto;
     background-repeat: repeat-y, repeat;
@@ -148,7 +139,7 @@ body[data-theme="retro"] {
   .content {
     height: 100%;
     padding: 3em min(5em, 25%);
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.66), rgba(0,0,0,1));
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 1));
     z-index: 4;
     font-family: "Press Start 2P";
   }
@@ -190,7 +181,9 @@ body[data-theme="retro"] {
     border-bottom: 0.25em solid var(--bi-blue);
   }
 
-  .link:hover, .link.home:hover, .link.cart:hover {
+  .link:hover,
+  .link.home:hover,
+  .link.cart:hover {
     color: var(--bi-pink);
     text-shadow: 2px 0px 2px var(--bi-purple), -2px 0px 2px var(--bi-blue);
   }
